@@ -1,4 +1,26 @@
-import { ComparisonSection } from "./ComparsionSection";
+"use client";
+
+import { ComparisonSection } from "./shared/ComparsionSection";
+import { Chart } from "react-google-charts";
+
+const SpellUsageChart = () => {
+  const data = [
+    ["Spell #1", "Spell #2"],
+    [15, 30],
+    [20, 19],
+  ];
+
+  return (
+    <Chart
+      chartType="ColumnChart"
+      data={data}
+      options={{
+        title: "Spell Usage",
+      }}
+      legendToggle
+    />
+  );
+};
 
 export function SpellUsageSection() {
   const spells = [
@@ -17,28 +39,8 @@ export function SpellUsageSection() {
   ];
 
   const mainContent = (
-    <div className="space-y-6">
-      {spells.map((spell) => (
-        <div key={spell.name} className="space-y-2">
-          <h3 className="font-medium text-gray-900">{spell.name}</h3>
-          <div className="relative pt-1">
-            <div className="flex items-center justify-between">
-              <div>
-                <div className="h-4 w-48 rounded bg-indigo-500"></div>
-                <div className="mt-1 h-4 w-72 rounded bg-emerald-500"></div>
-              </div>
-              <div className="ml-4 text-sm">
-                <div>Player 1: {spell.player1} casts</div>
-                <div>
-                  Player 2: {spell.player2} casts (
-                  {spell.difference > 0 ? "+" : ""}
-                  {spell.difference})
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      ))}
+    <div className="space-y-6 rounded border p-5">
+      <SpellUsageChart />
     </div>
   );
 

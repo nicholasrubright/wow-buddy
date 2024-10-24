@@ -1,19 +1,24 @@
+import { MoveUp } from "lucide-react";
+
 export function QuickCompare() {
   return (
     <div className="rounded-lg bg-white p-6 shadow">
       <h2 className="text-xl font-semibold text-gray-900">Quick Compare</h2>
-      <div className="mt-4 grid grid-cols-3 gap-4">
-        <div>
-          <span className="text-sm text-gray-500">Item Level</span>
-          <div className="mt-1 text-lg">447 vs 449</div>
+      <div className="stats mt-4 grid grid-cols-3 gap-4">
+        <div className="stat">
+          <div className="stat-title">Overall DPS</div>
+          <div className="flex flex-row gap-10">
+            <div className="stat-value">97K</div>
+            <div className="stat-value">67K</div>
+          </div>
         </div>
-        <div>
-          <span className="text-sm text-gray-500">Overall HPS</span>
-          <div className="mt-1 text-lg">89k vs 92k</div>
+        <div className="stat">
+          <div className="stat-title">Total Page Views</div>
+          <div className="stat-value">89,400</div>
         </div>
-        <div>
-          <span className="text-sm text-gray-500">Deaths</span>
-          <div className="mt-1 text-lg">1 vs 0</div>
+        <div className="stat">
+          <div className="stat-title">Total Page Views</div>
+          <div className="stat-value">89,400</div>
         </div>
       </div>
       <div className="mt-4 rounded bg-blue-50 p-4">
